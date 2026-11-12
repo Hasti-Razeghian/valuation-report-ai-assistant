@@ -1,0 +1,14 @@
+[
+  {
+    "id": "property_overview",
+    "text": "The example property is an office building located at 12 Example Street in the fictional town of Riverton. The building has three above-ground floors and a total gross floor area of approximately 2,400 square metres. The main entrance faces Example Street."
+  },
+  {
+    "id": "accessibility",
+    "text": "A bus stop is located approximately 150 metres from the main entrance and is served by the fictional routes 4 and 7. The property can be reached by car via Example Street. Eight marked parking spaces are located behind the building."
+  },
+  {
+    "id": "facilities_energy",
+    "text": "The building includes a reception area, passenger lift, shared meeting room and bicycle storage. The sample source set does not contain an energy label or measured annual energy consumption."
+  }
+]
