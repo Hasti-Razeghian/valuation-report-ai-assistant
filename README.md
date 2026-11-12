@@ -12,7 +12,7 @@ The prototype demonstrates how source documents can be split into chunks, indexe
 2. Splits the source text into smaller chunks.
 3. Creates embeddings and searches for relevant chunks using TF-IDF cosine similarity.
 4. Builds a grounded prompt from the retrieved evidence.
-5.  ly sends that prompt to an LLM through the OpenAI API.
+5. Sends that prompt to an LLM through the OpenAI API.
 6. Returns the generated draft together with the source passages for human verification.
 
 ## Architecture
@@ -69,7 +69,7 @@ export OPENAI_API_KEY="your-api-key"   # Windows PowerShell: $env:OPENAI_API_KEY
 python -m src.main --question "Describe the property's accessibility" --generate
 ```
 
-The LLM step is  . The example uses the OpenAI Python SDK and a configurable model name. Review API pricing and data-handling requirements before using any real documents.
+The example uses the OpenAI Python SDK and a configurable model name. Review API pricing and data-handling requirements before using any real documents.
 
 ## Example output
 
