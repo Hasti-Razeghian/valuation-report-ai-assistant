@@ -1,16 +1,16 @@
 # Valuation Report AI Assistant
 
-A small, reproducible demonstration of a Retrieval-Augmented Generation (RAG) workflow for drafting **factual** sections of valuation reports.
+A Python-based RAG system for drafting factual sections of property valuation reports using information retrieved from existing documents.
 
-The prototype demonstrates how source documents can be split into chunks, indexed, retrieved for a question, and passed to a language model with instructions to stay grounded in the supplied evidence. A human remains responsible for reviewing the result.
+The system processes source documents, retrieves relevant information based on a user query, and uses an LLM to generate a draft based on the retrieved evidence. Each draft is returned with its supporting source passages for human review. A human remains responsible for reviewing the result.
 
-> **Scope and provenance:** This is an independent demonstration built with synthetic example data. It is not Planon's production system and contains no Planon documents, source code, customer data, or confidential information. The code is intentionally modular and can run in a retrieval-only mode without an LLM API key.
+> **Scope and provenance:** This is an independent demonstration built with synthetic example data. It is not Planon's production system and contains no Planon documents, source code, customer data, or confidential information. Retrieval can also be tested independently, without making an LLM API call.
 
 ## What it does
 
 1. Loads synthetic property information from `data/sample_documents.json`.
 2. Splits the source text into smaller chunks.
-3. Creates embeddings and searches for relevant chunks using TF-IDF cosine similarity.
+3. Converts document chunks into TF-IDF vectors and ranks them using cosine similarity.
 4. Builds a grounded prompt from the retrieved evidence.
 5. Sends that prompt to an LLM through the OpenAI API.
 6. Returns the generated draft together with the source passages for human verification.
@@ -60,7 +60,7 @@ This mode does not require an API key:
 python -m src.main --question "Describe the property's accessibility"
 ```
 
-### 3. Generate a draft with an LLM ( )
+### 3. Generate a draft with an LLM
 
 Set an API key and run:
 
@@ -121,7 +121,7 @@ For a next iteration, I would:
 
 ## Limitations
 
-This is a compact educational prototype, not a production-ready valuation tool. TF-IDF is used to keep the demo lightweight; a production system may use domain-appropriate embedding models and a vector database. The sample documents are synthetic. The output must always be checked by a qualified human.
+This implementation focuses on demonstrating the core RAG workflow rather than providing a production-ready valuation tool. TF-IDF is used to keep the demo lightweight. A production system may use domain-appropriate embedding models and a vector database. The sample documents are synthetic. The output must always be checked by a qualified human.
 
 ## Technologies
 
