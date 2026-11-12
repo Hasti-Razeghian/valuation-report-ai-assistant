@@ -12,7 +12,7 @@ The prototype demonstrates how source documents can be split into chunks, indexe
 2. Splits the source text into smaller chunks.
 3. Creates embeddings and searches for relevant chunks using TF-IDF cosine similarity.
 4. Builds a grounded prompt from the retrieved evidence.
-5. Optionally sends that prompt to an LLM through the OpenAI API.
+5.  ly sends that prompt to an LLM through the OpenAI API.
 6. Returns the generated draft together with the source passages for human verification.
 
 ## Architecture
@@ -33,7 +33,7 @@ Synthetic source documents
  Evidence + instructions
           |
           v
- Optional LLM generation
+  LLM generation
           |
           v
  Draft + retrieved sources
@@ -60,7 +60,7 @@ This mode does not require an API key:
 python -m src.main --question "Describe the property's accessibility"
 ```
 
-### 3. Generate a draft with an LLM (optional)
+### 3. Generate a draft with an LLM ( )
 
 Set an API key and run:
 
@@ -69,7 +69,7 @@ export OPENAI_API_KEY="your-api-key"   # Windows PowerShell: $env:OPENAI_API_KEY
 python -m src.main --question "Describe the property's accessibility" --generate
 ```
 
-The LLM step is optional. The example uses the OpenAI Python SDK and a configurable model name. Review API pricing and data-handling requirements before using any real documents.
+The LLM step is  . The example uses the OpenAI Python SDK and a configurable model name. Review API pricing and data-handling requirements before using any real documents.
 
 ## Example output
 
@@ -106,7 +106,7 @@ The retriever should return source passages mentioning the nearby bus stop, road
 - **Retrieval before generation:** the model receives relevant evidence instead of being asked to rely on general knowledge.
 - **Sources returned with the draft:** reviewers can check where statements came from.
 - **Human approval:** generated text is a starting point, not a final valuation or professional judgment.
-- **Optional generation:** retrieval can be tested independently of an LLM provider.
+- **Text generation:** retrieval can be tested independently of an LLM provider.
 
 ## Evaluation and original project context
 
@@ -125,4 +125,4 @@ This is a compact educational prototype, not a production-ready valuation tool. 
 
 ## Technologies
 
-Python, retrieval-augmented generation, scikit-learn, OpenAI Python SDK (optional), prompt engineering, evaluation.
+Python, retrieval-augmented generation, scikit-learn, OpenAI Python SDK ( ), prompt engineering, evaluation.
